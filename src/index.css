@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+    --color-clay-lavender: #E6E6FA;
+    --color-clay-mint: #98FB98;
+    --color-clay-blue: #87CEEB;
+    --color-clay-peach: #FFDAB9;
+    --color-clay-white: #FEFEFE;
+}
+
+:root {
+    --clay-shadow: rgba(0, 0, 0, 0.1);
+    --clay-inner-shadow: rgba(0, 0, 0, 0.05);
+}
+
+@layer components {
+    .clay-element {
+        @apply rounded-[20px] transition-all duration-300 ease-out;
+        box-shadow:
+            8px 8px 16px var(--clay-shadow),
+            -8px -8px 16px rgba(255, 255, 255, 0.9),
+            inset 2px 2px 4px var(--clay-inner-shadow),
+            inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+    }
+
+    .clay-element:hover {
+        @apply -translate-y-0.5;
+        box-shadow:
+            10px 10px 20px var(--clay-shadow),
+            -10px -10px 20px rgba(255, 255, 255, 0.9),
+            inset 2px 2px 4px var(--clay-inner-shadow),
+            inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+    }
+
+    .clay-pressed {
+        @apply translate-y-px;
+        box-shadow:
+            4px 4px 8px var(--clay-shadow),
+            -4px -4px 8px rgba(255, 255, 255, 0.9),
+            inset 4px 4px 8px var(--clay-inner-shadow),
+            inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+    }
+}
